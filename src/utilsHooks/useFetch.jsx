@@ -24,7 +24,6 @@ const useFetch = () => {
         link: item.link[0],
         pubDate: item.pubDate[0],
         description: item.description[0],
-        // categories: item.category,
         image: item["media:thumbnail"]?.[0].$.url,
         category: item["meneame:sub"]?.[0],
         votes: item["meneame:votes"],
