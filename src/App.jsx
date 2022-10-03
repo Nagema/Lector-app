@@ -3,14 +3,14 @@ import { MainPage } from "./containers/MainContainer/MainPage";
 import { NavBar } from "./containers/NavBarContainer/NavBar";
 import { Favorites } from "./containers/Favorites/Favorites";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MyNewsProvider from "./context/NewsContext";
 import SearchProvider from "./context/SearchContext";
-import NewsProvider from "./context/NewsContext";
 
 function App() {
   return (
     <>
       <SearchProvider>
-        <NewsProvider>
+        <MyNewsProvider>
           <BrowserRouter>
             <NavBar />
             <Routes>
@@ -22,7 +22,7 @@ function App() {
               ></Route>
             </Routes>
           </BrowserRouter>
-        </NewsProvider>
+        </MyNewsProvider>
       </SearchProvider>
     </>
   );
