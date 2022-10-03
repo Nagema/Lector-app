@@ -75,6 +75,9 @@
   text-align: end;
 }
 
-.toggle_button img {
+.toggle_button__menu {
   width: 1.5em;
+}
+.toggle_button__close {
+  width: 1.2em;
 }

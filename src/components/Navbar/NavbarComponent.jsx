@@ -43,13 +43,13 @@ export const NavbarComponent = () => {
         </Link>
         {menuIcon && !isWide ? (
           <button className="toggle_button" onClick={handleMenuIcon}>
-            <img src={iconMenu} alt="menu icon" />
+            <img className="toggle_button__menu" src={iconMenu} alt="menu icon" />
           </button>
         ) : (
           <div className="navbar_menu__wrapper">
             {!isWide && (
               <button className="toggle_button" onClick={handleMenuIcon}>
-                <img src={iconClose} alt="menu icon" />
+                <img className="toggle_button__close" src={iconClose} alt="menu icon" />
               </button>
             )}
             <ul className={navbarListStyle}>
