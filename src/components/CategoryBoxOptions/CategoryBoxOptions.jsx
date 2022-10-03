@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import "./styles.css";
-import { News } from '../../context/NewsContext'
+import { News } from '../../context/NewsContext_1'
 import { Link } from "react-router-dom";
 
 export const CategoryBoxOptions = () => {

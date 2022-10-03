@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "./styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { News } from "../../context/NewsContext";
+import { News } from "../../context/NewsContext_1";
 
 export const CardComponent = ({ newItem }) => {
   const { toggleFav, isItFav } = useContext(News);
@@ -17,7 +17,7 @@ export const CardComponent = ({ newItem }) => {
         <h1 className="card_title">{newItem.title}</h1>
         {newItem.image && (
           <div className="card_image">
-            <img src={newItem.image} alt="news image" />
+            <img src={newItem.image} alt="news" />
           </div>
         )}
         <div
