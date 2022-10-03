@@ -4,6 +4,7 @@
   text-decoration: none;
   padding: 0;
 }
+
 *:focus {
   outline: none;
 }
@@ -12,19 +13,34 @@
   color: rgb(109, 107, 107);
 }
 
+.navbar_main_wrapper {
+  display: flex;
+}
+.navbar_main_wrapper .search_input {
+  align-self: flex-end;
+}
+
 .navbar_menu {
   padding: 2em;
   display: flex;
   justify-content: space-between;
 }
 
-.navbar_menu__list {
+.navbar_menu__list__mobile {
   display: flex;
   flex-direction: column;
 }
 
-.navbar_menu__list li {
+.navbar_menu__list__desktop {
+  display: flex;
+}
+
+.navbar_menu__list__mobile li {
   padding-bottom: 0.2em;
+}
+
+.navbar_menu__list__desktop li {
+  padding: 0.2em;
 }
 
 .navbar_menu__wrapper {
@@ -34,21 +50,22 @@
 }
 
 .search_input {
-  padding-top: 1em;
-  color: rgb(109, 107, 107);
-  border-bottom: solid;
-  border-color: 1px;
-  border-color: rgb(109, 107, 107);
-  max-width: 70%;
-  margin: auto;
+  display: flex;
   padding-top: 1em;
   padding-bottom: 0.2em;
+  margin: auto;
+  padding-left: 2em;
 }
 
 .search_input input {
   border: none;
   background-color: transparent;
   font-size: 1em;
+  margin-left: 10px;
+  color: rgb(109, 107, 107);
+  border-bottom: solid;
+  border-color: 1px;
+  border-color: rgb(109, 107, 107);
 }
 
 .toggle_button {
@@ -57,6 +74,7 @@
   border: none;
   text-align: end;
 }
+
 .toggle_button img {
   width: 1.5em;
 }

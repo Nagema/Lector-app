@@ -6,17 +6,19 @@ import {
   faNewspaper,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import useMediaQuery from "react-responsive";
+import { useMediaQuery } from "react-responsive";
 import iconMenu from "../../assets/images/icon-menu.svg";
 import iconClose from "../../assets/images/icon-close-menu.svg";
 import { CategoryBoxOptions } from "../CategoryBoxOptions/CategoryBoxOptions";
 import { Search } from "../../context/SearchContext";
 
 export const NavbarComponent = () => {
-
   const isWide = useMediaQuery({
     query: "(min-width: 1023px)",
   });
+  const navbarListStyle = isWide
+    ? "navbar_menu__list__desktop"
+    : "navbar_menu__list__mobile";
   const [categoryToggle, setCategoryToggle] = useState(false);
   const [menuIcon, setMenuIconToggle] = useState(true);
 
@@ -30,38 +32,41 @@ export const NavbarComponent = () => {
 
   const handleBoxClose = () => {
     setCategoryToggle(false);
-  }
+  };
 
   const { searchInput, setSearchInput } = useContext(Search);
-
   return (
     <div>
       <nav className="navbar_menu">
         <Link to="/" className="logo">
-            <FontAwesomeIcon icon={faNewspaper} />
+          <FontAwesomeIcon icon={faNewspaper} />
         </Link>
-        {menuIcon ? (
+        {menuIcon && !isWide ? (
           <button className="toggle_button" onClick={handleMenuIcon}>
             <img src={iconMenu} alt="menu icon" />
           </button>
         ) : (
           <div className="navbar_menu__wrapper">
-            <button className="toggle_button" onClick={handleMenuIcon}>
-              <img src={iconClose} alt="menu icon" />
-            </button>
-            <ul className="navbar_menu__list">
+            {!isWide && (
+              <button className="toggle_button" onClick={handleMenuIcon}>
+                <img src={iconClose} alt="menu icon" />
+              </button>
+            )}
+            <ul className={navbarListStyle}>
               <li>
                 <Link to="/" onClick={handleBoxClose}>
                   Home
                 </Link>
               </li>
-              <li onClick={handleFeatureLink}> Categorias
-                {categoryToggle &&  <CategoryBoxOptions />}
-              </li>
               <li>
-                <Link to="/" onClick={handleBoxClose}>
+                <Link to={"/favorites"} onClick={handleBoxClose}>
                   Favoritos
                 </Link>
+              </li>
+              <li onClick={handleFeatureLink}>
+                {" "}
+                Categorias
+                {categoryToggle && <CategoryBoxOptions />}
               </li>
             </ul>
           </div>
@@ -69,7 +74,12 @@ export const NavbarComponent = () => {
       </nav>
       <div className="search_input">
         <FontAwesomeIcon icon={faMagnifyingGlass} />
-        <input type="text" placeholder="Buscar" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
+        <input
+          type="text"
+          placeholder="Buscar"
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
+        />
       </div>
     </div>
   );

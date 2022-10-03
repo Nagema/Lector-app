@@ -11,7 +11,6 @@ export const MainPage = () => {
   const { searchInput } = useContext(Search);
 
   const [fileteredNews, setFilteredNews] = useState([]);
-
   useEffect(() => {
     const fileteredNews = news
       .filter((item) => {
