@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,8 +10,10 @@ import useMediaQuery from "react-responsive";
 import iconMenu from "../../assets/images/icon-menu.svg";
 import iconClose from "../../assets/images/icon-close-menu.svg";
 import { CategoryBoxOptions } from "../CategoryBoxOptions/CategoryBoxOptions";
+import { Search } from "../../context/SearchContext";
 
 export const NavbarComponent = () => {
+
   const isWide = useMediaQuery({
     query: "(min-width: 1023px)",
   });
@@ -29,12 +31,15 @@ export const NavbarComponent = () => {
   const handleBoxClose = () => {
     setCategoryToggle(false);
   }
+
+  const { searchInput, setSearchInput } = useContext(Search);
+
   return (
     <div>
       <nav className="navbar_menu">
-        <div className="logo">
-          <FontAwesomeIcon icon={faNewspaper} />
-        </div>
+        <Link to="/" className="logo">
+            <FontAwesomeIcon icon={faNewspaper} />
+        </Link>
         {menuIcon ? (
           <button className="toggle_button" onClick={handleMenuIcon}>
             <img src={iconMenu} alt="menu icon" />
@@ -64,7 +69,7 @@ export const NavbarComponent = () => {
       </nav>
       <div className="search_input">
         <FontAwesomeIcon icon={faMagnifyingGlass} />
-        <input type="text" placeholder="Buscar" />
+        <input type="text" placeholder="Buscar" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
       </div>
     </div>
   );

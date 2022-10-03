@@ -4,6 +4,9 @@
   text-decoration: none;
   padding: 0;
 }
+*:focus {
+  outline: none;
+}
 
 .logo {
   color: rgb(109, 107, 107);
@@ -45,6 +48,7 @@
 .search_input input {
   border: none;
   background-color: transparent;
+  font-size: 1em;
 }
 
 .toggle_button {

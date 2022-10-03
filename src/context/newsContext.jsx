@@ -4,9 +4,7 @@ import useFetch from "../utilsHooks/useFetch";
 export const News = createContext();
 
 export const NewsProvider = ({ children }) => {
-  const { news, setNews } = useFetch({
-    url: "/rss",
-  });
+  const { news, setNews } = useFetch();
 
   return (
     <News.Provider

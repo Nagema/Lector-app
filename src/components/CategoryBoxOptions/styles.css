@@ -3,6 +3,7 @@
     border-color: lightgrey;
     font-size: 15px;
     background-color: lavender;
+    text-transform: capitalize;
 }
 
 .categoty_options__wrapper li {

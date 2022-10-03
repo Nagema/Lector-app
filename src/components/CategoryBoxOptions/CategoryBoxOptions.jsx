@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import "./styles.css";
-import { News } from '../../context/newsContext'
+import { News } from '../../context/NewsContext'
 import { Link } from "react-router-dom";
 
 export const CategoryBoxOptions = () => {
@@ -9,12 +9,11 @@ export const CategoryBoxOptions = () => {
 
   const categorySet = new Set(news.map((item) => item.category));
   const categories = Array.from(categorySet);
-  console.log(categories);
-  
+
   return (
       <ul className='categoty_options__wrapper'>
-      {categories.map((category) =>  
-        <li> 
+      {categories.map((category) =>
+        <li key={category}> 
           <Link to={`/news/${category}`} >
             {category}
           </Link>

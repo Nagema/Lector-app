@@ -18,12 +18,31 @@
     justify-content: center;
 }
 
+.card_description {
+    padding: 1em;
+}
+
+.card_description img {
+    display: none;
+}
+
+.card_description p:last-child {
+    display: none;
+}
+
+.card_description p:nth-last-child(2) {
+    padding: 1em 0;
+    color: darkgray;
+    text-transform: capitalize;
+  }
+
 .card_badges {
     display: flex;
     padding: 1em;
 }
 .card_date {
-    padding: 1em 1em 1em 0;
+    padding: 1em;
+    text-align: end;
 }
 .card_options{
     display: flex;
@@ -32,6 +51,7 @@
 
 .card_badges {
     margin: auto;
+    text-transform: capitalize;
 }
 
 .card_badges p {
