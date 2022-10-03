@@ -9,8 +9,16 @@
   outline: none;
 }
 
-.logo {
+.logo_wrapper {
   color: rgb(109, 107, 107);
+  display: flex;
+}
+
+.logo_wrapper p {
+  font-size: 1em;
+  line-height: 1.5;
+  padding: 0 1em;
+  font-weight: 600;
 }
 
 .navbar_main_wrapper {

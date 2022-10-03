@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMagnifyingGlass,
   faNewspaper,
+  fa2xl,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
@@ -38,8 +39,9 @@ export const NavbarComponent = () => {
   return (
     <div>
       <nav className="navbar_menu">
-        <Link to="/" className="logo">
-          <FontAwesomeIcon icon={faNewspaper} />
+        <Link to="/" className="logo_wrapper">
+          <FontAwesomeIcon className="fa-xl" icon={faNewspaper} />
+          <p>Infointelygenz</p>
         </Link>
         {menuIcon && !isWide ? (
           <button className="toggle_button" onClick={handleMenuIcon}>
