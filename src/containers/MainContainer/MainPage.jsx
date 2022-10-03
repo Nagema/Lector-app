@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./styles.css";
 import { CardComponent } from "../../components/CardComponent/CardComponent";
-import { News } from "../../context/NewsContext_1";
+import { News } from "../../context/NewsContext";
 import { useParams } from "react-router-dom";
 import { Search } from "../../context/SearchContext";
 

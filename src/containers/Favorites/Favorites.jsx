@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { News } from "../../context/NewsContext_1";
+import { News } from "../../context/NewsContext";
 import { CardComponent } from "../../components/CardComponent/CardComponent";
 
 export const Favorites = () => {

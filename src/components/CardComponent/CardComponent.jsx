@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "./styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { News } from "../../context/NewsContext_1";
+import { News } from "../../context/NewsContext";
 
 export const CardComponent = ({ newItem }) => {
   const { toggleFav, isItFav } = useContext(News);
