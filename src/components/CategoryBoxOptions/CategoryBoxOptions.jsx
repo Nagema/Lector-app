@@ -11,8 +11,6 @@ export const CategoryBoxOptions = () => {
   const categories = Array.from(categorySet);
   console.log(categories);
   
-
-  // console.log(categoryList)
   return (
       <ul className='categoty_options__wrapper'>
       {categories.map((category) =>  
