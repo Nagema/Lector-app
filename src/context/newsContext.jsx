@@ -3,7 +3,7 @@ import useFetch from "../utilsHooks/useFetch";
 
 export const News = createContext();
 
-export const NewsProvider = ({ children }) => {
+const NewsProvider = ({ children }) => {
   const { news, setNews } = useFetch();
   const [favs, setFavs] = useState([]);
 
