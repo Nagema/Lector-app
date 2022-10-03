@@ -1,8 +1,59 @@
 .card {
     display: flex;
+    flex-direction: column;
     border: solid;
     border-width: 1px;
     border-color:lightgrey;
     margin: 1em;
     padding: 1em;
+}
+
+.card_title {
+    padding: 0.5em;
+}
+
+.card_image {
+    padding: 0.5em;
+    display: flex;
+    justify-content: center;
+}
+
+.card_badges {
+    display: flex;
+    padding: 1em;
+}
+.card_date {
+    padding: 1em 1em 1em 0;
+}
+.card_options{
+    display: flex;
+    flex-direction: column;
+}
+
+.card_badges {
+    margin: auto;
+}
+
+.card_badges p {
+    background-color: orange;
+    padding: 1em;
+    border: solid;
+    border-color: white;
+    border-radius: 0px;
+    height: 1vh;
+    line-height: 0.5;
+    color: #ffff;
+}
+
+.card_badges p:first-child {
+    color: black;
+    border-right: none;
+    background-color: rgba(255, 166, 0, 0.425);
+}
+.card_favorite_icon {
+    color: red;
+    align-self:flex-end;
+    background-color: transparent;
+    border: none;
+    padding: 0.3em;
 }

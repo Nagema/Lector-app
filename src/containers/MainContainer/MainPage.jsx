@@ -20,7 +20,7 @@ export const MainPage = () => {
       });
       const [channel] = parsedRss.rss.channel;
       // map rss json to our own structure
-      // console.log(channel.item)
+    console.log(channel.item)
       const rssNews = channel.item.map((item) => ({
         title: item.title[0],
         link: item.link[0],
@@ -28,6 +28,8 @@ export const MainPage = () => {
         description: item.description[0],
         categories: item.category,
         image: item["media:thumbnail"]?.[0].$.url,
+        category:item["meneame:sub"],
+        votes: item["meneame:votes"],
       }));
       setNews(
         rssNews
@@ -37,7 +39,7 @@ export const MainPage = () => {
           .concat(rssNews)
           .concat(rssNews)
       ); // TODO: renove this
-      // console.log(rssNews)
+    //  console.log(rssNews)
     }
     fetchNews();
   }, []);
