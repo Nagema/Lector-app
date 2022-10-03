@@ -1,0 +1,10 @@
+.categoty_options__wrapper{
+    border: solid;
+    border-color: lightgrey;
+    font-size: 15px;
+    background-color: lavender;
+}
+
+.categoty_options__wrapper li {
+    padding: 0.5em 1em;
+}

@@ -25,6 +25,10 @@ export const NavbarComponent = () => {
   const handleMenuIcon = () => {
     setMenuIconToggle(!menuIcon);
   };
+
+  const handleBoxClose = () => {
+    setCategoryToggle(false);
+  }
   return (
     <div>
       <nav className="navbar_menu">
@@ -42,18 +46,15 @@ export const NavbarComponent = () => {
             </button>
             <ul className="navbar_menu__list">
               <li>
-                <Link className="links" to="/">
+                <Link to="/" onClick={handleBoxClose}>
                   Home
                 </Link>
               </li>
-              <li>
-                <Link className="links" to="/">
-                  Categorias
-                </Link>
-                <CategoryBoxOptions />
+              <li onClick={handleFeatureLink}> Categorias
+                {categoryToggle &&  <CategoryBoxOptions />}
               </li>
               <li>
-                <Link className="links" to="/">
+                <Link to="/" onClick={handleBoxClose}>
                   Favoritos
                 </Link>
               </li>

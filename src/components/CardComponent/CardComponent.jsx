@@ -11,7 +11,7 @@ export const CardComponent = ({ newItem }) => {
       <div>
         <h1 className="card_title">{newItem.title}</h1>
         <div className="card_image">
-          <img src={newItem.image} alt="logo" />
+          <img src={newItem.image} alt="news image" />
         </div>
         <p className="card_description">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta alias
