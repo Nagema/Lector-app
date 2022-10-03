@@ -1,12 +1,12 @@
-import './App.css';
-import { MainPage } from './containers/MainContainer/MainPage';
-import { NavBar } from './containers/NavBarContainer/NavBar';
+import "./App.css";
+import { MainPage } from "./containers/MainContainer/MainPage";
+import { NavBar } from "./containers/NavBarContainer/NavBar";
 
 function App() {
   return (
     <div>
-      <NavBar/>
-      <MainPage/>
+      <NavBar />
+      <MainPage />
     </div>
   );
 }

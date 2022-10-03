@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import "./styles.css";
 import xml2js from "xml2js";
-import { CardComponent } from "../../components/Navbar/CardComponent/CardComponent";
+import { CardComponent } from "../../components/CardComponent/CardComponent";
 
 export const MainPage = () => {
   const [news, setNews] = useState([]);
@@ -45,7 +46,7 @@ export const MainPage = () => {
     <div>
       <main>
         <section>
-          <ul>
+          <ul className="main_news_list">
             {news.map((newItem, index) => (
               <CardComponent key={index} newItem={newItem} />
             ))}

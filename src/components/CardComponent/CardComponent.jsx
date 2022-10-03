@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../../../logo192.png";
 import "./styles.css";
 
 export const CardComponent = ({ newItem }) => {
@@ -18,7 +17,7 @@ export const CardComponent = ({ newItem }) => {
         </div>
       </div>
       <div>
-        <img src={logo} alt="logo" />
+        <img src={newItem.image} alt="logo" />
       </div>
     </li>
   );
