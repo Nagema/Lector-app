@@ -11,7 +11,7 @@ export const CategoryBoxOptions = () => {
   const categories = Array.from(categorySet);
 
   return (
-      <ul className='categoty_options__wrapper'>
+      <ul className='categoty_options__dropdown'>
       {categories.map((category) =>
         <li key={category}> 
           <Link to={`/news/${category}`} >
