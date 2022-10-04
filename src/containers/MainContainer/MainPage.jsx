@@ -30,9 +30,15 @@ export const MainPage = () => {
             </div>
           ) : (
             <ul className="main_news_list">
-              {fileteredNews.map((newItem, index) => (
-                <CardComponent key={index} newItem={newItem} />
-              ))}
+              {fileteredNews.length ? (
+                fileteredNews.map((newItem, index) => (
+                  <CardComponent key={index} newItem={newItem} />
+                ))
+              ) : (
+                <li className="no_results">
+                  Oops! No se encuentran resultados para esta búsqueda.
+                </li>
+              )}
             </ul>
           )}
         </section>
