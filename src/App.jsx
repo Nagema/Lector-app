@@ -5,6 +5,7 @@ import { Favorites } from "./containers/Favorites/Favorites";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NewsProvider from "./context/NewsContext";
 import SearchProvider from "./context/SearchContext";
+import { MainCardDetail } from "./containers/CardDetailContainer/MainCardDetail";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
                 path="/favorites"
                 element={<Favorites></Favorites>}
               ></Route>
+              <Route path="/detail/:id" element={<MainCardDetail />}></Route>
             </Routes>
           </BrowserRouter>
         </NewsProvider>

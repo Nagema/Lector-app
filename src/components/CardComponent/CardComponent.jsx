@@ -3,16 +3,23 @@ import "./styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { News } from "../../context/NewsContext";
+import { useNavigate } from "react-router-dom";
 
 export const CardComponent = ({ newItem }) => {
   const { toggleFav, isItFav } = useContext(News);
+
+  const navigate = useNavigate();
+  const handleDetail = () => {
+    const id = newItem.title.replaceAll(" ", "-").toLowerCase();
+    navigate(`/detail/${id}`);
+  };
 
   const favClassName = `${
     isItFav(newItem) ? "card_favorite_icon" : "not_favorite"
   }`;
 
   return (
-    <li className="card">
+    <li className="card" onClick={handleDetail}>
       <div>
         <h1 className="card_title">{newItem.title}</h1>
         {newItem.image && (
