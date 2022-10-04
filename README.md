@@ -1,3 +1,12 @@
+#App description
+
+This web application is a collection of news from an rss of https://www.meneame.net/
+you can be able to search news check the details, add then to a favorites section and filter them by category
+
+https://user-images.githubusercontent.com/40359358/193888355-6ad450cb-dc43-4b94-9aac-9083d3e8de79.mov
+
+
+
 # App deployment
 This application has been deploy with render.com https://lector-app.onrender.com/
 # Getting Started with Create React App
