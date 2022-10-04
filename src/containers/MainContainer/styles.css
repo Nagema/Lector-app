@@ -1,9 +1,9 @@
 .main_news_list {
-    margin: auto;
-    max-width: 100%;
+  margin: auto;
+  max-width: 100%;
 }
 @media screen and (min-width: 700px) {
-    .main_news_list {
-        max-width: 50%;
-    }
+  .main_news_list {
+    max-width: 50%;
   }
+}

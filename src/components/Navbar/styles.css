@@ -24,6 +24,7 @@
 .navbar_main_wrapper {
   display: flex;
 }
+
 .navbar_main_wrapper .search_input {
   align-self: flex-end;
 }
