@@ -19,7 +19,7 @@ app.get('/news', async (req, res) => {
   const [channel] = feed.rss.channel;
   // map rss json to our own structure
   const news = channel.item.map((item) => ({
-    id: item.title[0].replaceAll(' ', '-').toLowerCase(),
+    id: item.title[0]?.replaceAll(' ', '-').toLowerCase(),
     title: item.title[0],
     link: item.link[0],
     pubDate: item.pubDate[0]?.split(' ').slice(1, 4).join(' '), // 
