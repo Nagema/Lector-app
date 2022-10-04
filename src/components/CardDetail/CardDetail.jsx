@@ -17,7 +17,6 @@ export const CardDetail = (newItem) => {
         ></div>
         <p className="card_date">Publicado: {newItem.newItem.pubDate}</p>
       </div>
-      <div></div>
     </div>
   );
 };

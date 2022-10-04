@@ -3,15 +3,21 @@
   border: none;
   box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.11);
   border-radius: 5px;
-  padding: 0.5em 1em 0.5em 2.5em;
   margin: 2em 1em;
   background: #ffffff;
-  padding-left: 1em;
+}
+
+.card_header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card_body {
+  padding: 0.5em 1em;
 }
 
 .card_main_info {
   display: flex;
-  flex-direction: row-reverse;
   justify-content: space-between;
   padding-top: 1em;
 }
@@ -24,8 +30,7 @@
 }
 
 .card_image {
-  display: flex;
-  justify-content: space-between;
+  max-height: 6em;
 }
 
 .card_description {
@@ -50,20 +55,11 @@
   display: none;
 }
 
-.cardLink {
-  padding: 1em;
-}
-
 .card_description p:nth-last-child(2) {
   display: none;
   padding: 1em 0;
   color: darkgray;
   text-transform: capitalize;
-}
-
-.card_badges {
-  display: flex;
-  padding: 1em;
 }
 
 .card_date {
@@ -77,38 +73,36 @@
 }
 
 .card_badges {
-  margin: auto;
+  display: flex;
   text-transform: capitalize;
+  margin-top: -10px;
 }
 
 .card_badges p {
   background-color: orange;
   padding: 1em;
-  border: solid;
-  border-color: white;
   border-radius: 0px;
-  height: 1vh;
+  height: 0.5em;
   line-height: 0.5;
-  color: #ffff;
+  color: white;
 }
 
 .card_badges p:first-child {
   color: black;
   border-right: none;
-  background-color: rgba(255, 166, 0, 0.425);
-}
-.card_favorite_icon {
-  color: red;
-  align-self: flex-end;
-  background-color: transparent;
-  border: none;
-  padding: 0.3em;
+  background-color: rgb(252, 184, 59);
 }
 
-.not_favorite {
+.card_favorite_icon {
   color: gray;
   align-self: flex-end;
   background-color: transparent;
   border: none;
-  padding: 0.3em;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+.card_favorite_icon--selected {
+  color: red;
+  background-color: transparent;
 }
