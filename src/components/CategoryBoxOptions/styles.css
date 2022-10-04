@@ -13,7 +13,7 @@
   z-index: 10;
   margin: 0;
   padding: 0;
-  background-color: rgb(253, 209, 127);
+  background-color: rgba(255, 166, 0, 0.938);
   transition: 80ms;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .categoty_options__dropdown li a:hover {
-  background-color: rgba(255, 166, 0, 0.432);
+  background-color: rgba(255, 166, 0);
   z-index: 15;
   font-weight: 600;
 }

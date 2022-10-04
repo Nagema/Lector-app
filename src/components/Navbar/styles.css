@@ -38,14 +38,31 @@
 .navbar_menu__list__mobile {
   display: flex;
   flex-direction: column;
+  background-color: rgba(255, 166, 0, 0.795);
+  border-radius: 4px;
+}
+
+.navbar_menu__list__mobile li {
+  color: rgb(88, 85, 85);
+  margin: 0.3em 1em;
+}
+
+.navbar_menu__list__mobile li:hover {
+  color: white;
+  font-weight: 600;
+}
+
+.navbar_menu__list__mobile li a:hover {
+  color: white;
+  font-weight: 600;
+}
+
+.navbar_menu__list__mobile li a {
+  color: rgb(88, 85, 85);
 }
 
 .navbar_menu__list__desktop {
   display: flex;
-}
-
-.navbar_menu__list__mobile li {
-  padding-bottom: 0.2em;
 }
 
 .navbar_menu__list__desktop li {
@@ -62,10 +79,6 @@
 
 .navbar_menu__wrapper li {
   padding: 0.3rem;
-}
-
-.navbar_menu__wrapper li:hover {
-  background-color: rgba(255, 166, 0, 0.596);
 }
 
 .search_input {
