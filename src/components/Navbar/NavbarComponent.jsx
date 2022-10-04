@@ -1,9 +1,7 @@
 import React, { useState, useContext } from "react";
 import "./styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faNewspaper,
-} from "@fortawesome/free-solid-svg-icons";
+import { faNewspaper } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import iconMenu from "../../assets/images/icon-menu.svg";
@@ -43,13 +41,21 @@ export const NavbarComponent = () => {
         </Link>
         {menuIcon && !isWide ? (
           <button className="toggle_button" onClick={handleMenuIcon}>
-            <img className="toggle_button__menu" src={iconMenu} alt="menu icon" />
+            <img
+              className="toggle_button__menu"
+              src={iconMenu}
+              alt="menu icon"
+            />
           </button>
         ) : (
           <div className="navbar_menu__wrapper">
             {!isWide && (
               <button className="toggle_button" onClick={handleMenuIcon}>
-                <img className="toggle_button__close" src={iconClose} alt="menu icon" />
+                <img
+                  className="toggle_button__close"
+                  src={iconClose}
+                  alt="menu icon"
+                />
               </button>
             )}
             <ul className={navbarListStyle}>
@@ -73,9 +79,14 @@ export const NavbarComponent = () => {
         )}
       </nav>
       <div className="search_input">
-          <input className="input-elevated" type="text" placeholder="Buscar"  value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>  
+        <input
+          className="input-elevated"
+          type="text"
+          placeholder="Buscar"
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
+        />
       </div>
-      
     </div>
   );
 };

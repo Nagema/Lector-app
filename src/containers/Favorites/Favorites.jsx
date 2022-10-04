@@ -7,10 +7,10 @@ export const Favorites = () => {
 
   return (
     <section>
-        <ul className="main_news_list">
+      <ul className="main_news_list">
         {favs.map((newItem, index) => (
           <CardComponent key={index} newItem={newItem} />
-          ))}
+        ))}
       </ul>
     </section>
   );

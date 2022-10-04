@@ -19,34 +19,37 @@ export const CardComponent = ({ newItem }) => {
   }`;
 
   return (
-    <li className="card" >
+    <li className="card">
       <div onClick={handleDetail}>
-          <div className="card_main_info">
-            <h4 className="card_title">{newItem.title}</h4>
-            {newItem.image && (
-              <div className="card_image">
-                <img src={newItem.image} alt="news" />
-              </div>
-            )}
+        <div className="card_main_info">
+          <h4 className="card_title">{newItem.title}</h4>
+          {newItem.image && (
+            <div className="card_image">
+              <img src={newItem.image} alt="news" />
+            </div>
+          )}
+        </div>
+        <div className="card_options">
+          <div className="card_description">
+            <div
+              className="card_description_content"
+              dangerouslySetInnerHTML={{ __html: newItem.description }}
+            ></div>
           </div>
-          <div className="card_options">
-            <div className="card_description">
-                <div className="card_description_content"  dangerouslySetInnerHTML={{ __html: newItem.description }}></div>
-            </div>
-            <p className="card_date">Publicado: {newItem.pubDate}</p>
-            <div className="card_badges">
-              <p>votos: {newItem.votes}</p>
-              <p>{newItem.category}</p>
-            </div>
+          <p className="card_date">Publicado: {newItem.pubDate}</p>
+          <div className="card_badges">
+            <p>votos: {newItem.votes}</p>
+            <p>{newItem.category}</p>
+          </div>
         </div>
       </div>
-        <button
-          type="button"
-          className={favClassName}
-          onClick={() => toggleFav(newItem)}
-          >
-          <FontAwesomeIcon className="fa-xl" icon={faHeart} />
-        </button>
+      <button
+        type="button"
+        className={favClassName}
+        onClick={() => toggleFav(newItem)}
+      >
+        <FontAwesomeIcon className="fa-xl" icon={faHeart} />
+      </button>
     </li>
   );
 };
