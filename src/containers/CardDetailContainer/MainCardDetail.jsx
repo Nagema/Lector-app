@@ -11,7 +11,7 @@ export const MainCardDetail = () => {
     <div>
       {news
         .filter(
-          (newItem) => newItem.title.replaceAll(" ", "-").toLowerCase() === id
+          (newItem) => newItem.id === id
         )
         .map((newItem) => (
           <div className="main_detail_container" key={newItem.link}>
