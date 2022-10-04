@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import "./styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faMagnifyingGlass,
   faNewspaper,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
@@ -74,14 +73,9 @@ export const NavbarComponent = () => {
         )}
       </nav>
       <div className="search_input">
-        <FontAwesomeIcon icon={faMagnifyingGlass} />
-        <input
-          type="text"
-          placeholder="Buscar"
-          value={searchInput}
-          onChange={(e) => setSearchInput(e.target.value)}
-        />
+          <input className="input-elevated" type="text" placeholder="Buscar"  value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>  
       </div>
+      
     </div>
   );
 };

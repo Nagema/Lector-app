@@ -19,33 +19,33 @@ export const CardComponent = ({ newItem }) => {
   }`;
 
   return (
-    <li className="card" onClick={handleDetail}>
-      <div>
-        <h1 className="card_title">{newItem.title}</h1>
-        {newItem.image && (
-          <div className="card_image">
-            <img src={newItem.image} alt="news" />
-          </div>
-        )}
-        <div
-          className="card_description"
-          dangerouslySetInnerHTML={{ __html: newItem.description }}
-        ></div>
-        <p className="card_date">Publicado: {newItem.pubDate}</p>
-      </div>
-      <div className="card_options">
-        <div className="card_badges">
-          <p>votos: {newItem.votes}</p>
-          <p>{newItem.category}</p>
+    <li className="card" >
+        <div onClick={handleDetail}>
+          <h2 className="card_title">{newItem.title}</h2>
+          {newItem.image && (
+            <div className="card_image">
+              <img src={newItem.image} alt="news" />
+            </div>
+          )}
+          <div
+            className="card_description"
+            dangerouslySetInnerHTML={{ __html: newItem.description }}
+            ></div>
+          <p className="card_date">Publicado: {newItem.pubDate}</p>
         </div>
+        <div className="card_options">
+          <div className="card_badges">
+            <p>votos: {newItem.votes}</p>
+            <p>{newItem.category}</p>
+          </div>
+      </div>
         <button
           type="button"
           className={favClassName}
           onClick={() => toggleFav(newItem)}
-        >
-          <FontAwesomeIcon icon={faHeart} />
+          >
+          <FontAwesomeIcon className="fa-xl" icon={faHeart} />
         </button>
-      </div>
     </li>
   );
 };

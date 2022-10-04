@@ -1,11 +1,9 @@
 .card {
-  display: flex;
-  flex-direction: column;
-  border: solid;
-  border-width: 1px;
-  border-color: lightgrey;
-  margin: 1em;
-  padding: 1em;
+  line-height: 1.5;
+  border: none;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
+  border-radius: 5px;
+  padding: .5em 1em .5em 2.5em;
 }
 
 .card_title {
@@ -35,6 +33,7 @@
 }
 
 .card_description p:nth-last-child(2) {
+  display: none;
   padding: 1em 0;
   color: darkgray;
   text-transform: capitalize;

@@ -5,14 +5,14 @@ export const CardDetail = (newItem) => {
   return (
     <div className="card">
       <div>
-        <h1 className="card_title">{newItem.newItem.title}</h1>
+        <h2 className="card_title">{newItem.newItem.title}</h2>
         {newItem.newItem.image && (
           <div className="card_image">
             <img src={newItem.newItem.image} alt="news" />
           </div>
         )}
         <div
-          className="card_description"
+          className="card_description__detail"
           dangerouslySetInnerHTML={{ __html: newItem.newItem.description }}
         ></div>
         <p className="card_date">Publicado: {newItem.newItem.pubDate}</p>
