@@ -36,7 +36,8 @@ export const MainPage = () => {
                 ))
               ) : (
                 <li className="no_results">
-                  Oops! No se encuentran resultados para esta búsqueda.
+                  Oops! No se encuentran resultados para esta búsqueda
+                  ¯\_(ツ)_/¯
                 </li>
               )}
             </ul>
