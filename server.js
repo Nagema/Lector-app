@@ -21,7 +21,7 @@ app.get('/news', async (req, res) => {
   const news = channel.item.map((item) => ({
     title: item.title[0],
     link: item.link[0],
-    pubDate: item.pubDate[0],
+    pubDate: item.pubDate[0]?.split(' ').slice(1, 4).join(' '), // 
     description: item.description[0],
     image: item["media:thumbnail"]?.[0].$.url,
     category: item["meneame:sub"]?.[0],
