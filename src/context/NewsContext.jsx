@@ -4,7 +4,7 @@ import useFetch from "../utilsHooks/useFetch";
 export const News = createContext();
 
 const NewsProvider = ({ children }) => {
-  const { news, setNews } = useFetch();
+  const { news, loading } = useFetch();
   const [favs, setFavs] = useState([]);
 
   const isItFav = (item) => {
@@ -25,7 +25,7 @@ const NewsProvider = ({ children }) => {
     <News.Provider
       value={{
         news,
-        setNews,
+        loading,
         toggleFav,
         isItFav,
         favs,

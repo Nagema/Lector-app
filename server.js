@@ -22,7 +22,7 @@ app.get('/news', async (req, res) => {
     id: item.title[0]?.replace(/ /g, '-').toLowerCase(),
     title: item.title[0],
     link: item.link[0],
-    pubDate: item.pubDate[0]?.split(' ').slice(1, 4).join(' '), // 
+    pubDate: item.pubDate[0]?.split(' ').slice(1, 5).join(' '), // pubDate is in format ¨Tue, 04 Oct 2022 20:35:03 +0000¨, we want to only show the date and hour
     description: item.description[0],
     image: item["media:thumbnail"]?.[0].$.url,
     category: item["meneame:sub"]?.[0],

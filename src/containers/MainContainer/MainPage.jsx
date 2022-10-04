@@ -7,7 +7,7 @@ import { Search } from "../../context/SearchContext";
 
 export const MainPage = () => {
   const { category } = useParams();
-  const { news } = useContext(News);
+  const { news, loading } = useContext(News);
   const { searchInput } = useContext(Search);
 
   const fileteredNews = news
@@ -24,11 +24,17 @@ export const MainPage = () => {
     <div>
       <main>
         <section>
-          <ul className="main_news_list">
-            {fileteredNews.map((newItem, index) => (
-              <CardComponent key={index} newItem={newItem} />
-            ))}
-          </ul>
+          {loading ? (
+            <div className="loader_wrapper">
+              <span className="loader" />
+            </div>
+          ) : (
+            <ul className="main_news_list">
+              {fileteredNews.map((newItem, index) => (
+                <CardComponent key={index} newItem={newItem} />
+              ))}
+            </ul>
+          )}
         </section>
       </main>
     </div>
