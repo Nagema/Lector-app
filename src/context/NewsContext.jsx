@@ -5,19 +5,18 @@ export const News = createContext();
 
 const NewsProvider = ({ children }) => {
   const { news, loading } = useFetch();
-  const [favs, setFavs] = useState([]);
+  const [favIds, setFavIds] = useState([]);
 
   const isItFav = (item) => {
-    return favs.some((element) => element.link === item.link);
+    return favIds.includes(item.id);
   };
 
   const toggleFav = (item) => {
-    const sameItem = isItFav(item);
-    if (!sameItem) {
-      setFavs([...favs, item]);
+    if (isItFav(item)) {
+      const newFavIds = favIds.filter((favId) => favId !== item.id); // remove fav
+      setFavIds(newFavIds);
     } else {
-      const newFavs = favs.filter((fav) => fav.link !== item.link);
-      setFavs(newFavs);
+      setFavIds([...favIds, item.id]); // add fav
     }
   };
 
@@ -28,7 +27,7 @@ const NewsProvider = ({ children }) => {
         loading,
         toggleFav,
         isItFav,
-        favs,
+        favIds,
       }}
     >
       {children}

@@ -2,22 +2,32 @@ import React, { useContext } from "react";
 import "./styles.css";
 import { CardComponent } from "../../components/CardComponent/CardComponent";
 import { News } from "../../context/NewsContext";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { Search } from "../../context/SearchContext";
 
 export const MainPage = () => {
   const { category } = useParams();
-  const { news, loading } = useContext(News);
+  const { pathname } = useLocation();
+  const { news, isItFav, favIds, loading } = useContext(News);
   const { searchInput } = useContext(Search);
+
+  const isFavoritePage = pathname === "/favorites";
 
   const fileteredNews = news
     .filter((item) => {
+      // filter by category
       if (!category) return true;
       return item.category === category;
     })
     .filter((item) => {
+      // filter by search term
       if (!searchInput) return true;
       return item.title.toLowerCase().includes(searchInput.toLowerCase());
+    })
+    .filter((item) => {
+      // filter by favorite
+      if (!isFavoritePage) return true;
+      return isItFav(item);
     });
 
   return (
@@ -36,7 +46,9 @@ export const MainPage = () => {
                 ))
               ) : (
                 <li className="no_results">
-                  Oops! No se encuentran resultados para esta búsqueda
+                  {isFavoritePage && !favIds.length
+                    ? "Oops! Parece que no tienes favoritos"
+                    : "Oops! No se encuentran resultados para esta búsqueda"}
                   ¯\_(ツ)_/¯
                 </li>
               )}
