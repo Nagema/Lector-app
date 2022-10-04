@@ -1,15 +1,19 @@
 .card {
   line-height: 1.5;
   border: none;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
+  box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.11);
   border-radius: 5px;
   padding: .5em 1em .5em 2.5em;
+  margin: 2em 1em;
+  background: #FFFFFF;
+  padding-left: 1em;
 }
 
 .card_main_info {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
+  padding-top: 1em;
 }
 
 .card_title {

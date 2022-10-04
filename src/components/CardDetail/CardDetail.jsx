@@ -3,11 +3,11 @@ import "./styles.css";
 
 export const CardDetail = (newItem) => {
   return (
-    <div className="card">
-      <div>
-        <h2 className="card_title">{newItem.newItem.title}</h2>
+    <div>
+      <div className="card_detail">
+        <h3>{newItem.newItem.title}</h3>
         {newItem.newItem.image && (
-          <div className="card_image">
+          <div className="card_detail_image">
             <img src={newItem.newItem.image} alt="news" />
           </div>
         )}
@@ -17,11 +17,7 @@ export const CardDetail = (newItem) => {
         ></div>
         <p className="card_date">Publicado: {newItem.newItem.pubDate}</p>
       </div>
-      <div className="card_options">
-        <div className="card_badges">
-          <p>votos: {newItem.newItem.votes}</p>
-          <p>{newItem.newItem.category}</p>
-        </div>
+      <div>
       </div>
     </div>
   );
