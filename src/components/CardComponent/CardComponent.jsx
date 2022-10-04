@@ -20,24 +20,25 @@ export const CardComponent = ({ newItem }) => {
 
   return (
     <li className="card" >
-        <div onClick={handleDetail}>
-          <h2 className="card_title">{newItem.title}</h2>
-          {newItem.image && (
-            <div className="card_image">
-              <img src={newItem.image} alt="news" />
-            </div>
-          )}
-          <div
-            className="card_description"
-            dangerouslySetInnerHTML={{ __html: newItem.description }}
-            ></div>
-          <p className="card_date">Publicado: {newItem.pubDate}</p>
-        </div>
-        <div className="card_options">
-          <div className="card_badges">
-            <p>votos: {newItem.votes}</p>
-            <p>{newItem.category}</p>
+      <div onClick={handleDetail}>
+          <div className="card_main_info">
+            <h4 className="card_title">{newItem.title}</h4>
+            {newItem.image && (
+              <div className="card_image">
+                <img src={newItem.image} alt="news" />
+              </div>
+            )}
           </div>
+          <div className="card_options">
+            <div className="card_description">
+                <div className="card_description_content"  dangerouslySetInnerHTML={{ __html: newItem.description }}></div>
+            </div>
+            <p className="card_date">Publicado: {newItem.pubDate}</p>
+            <div className="card_badges">
+              <p>votos: {newItem.votes}</p>
+              <p>{newItem.category}</p>
+            </div>
+        </div>
       </div>
         <button
           type="button"
