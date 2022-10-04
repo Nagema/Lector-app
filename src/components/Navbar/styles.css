@@ -55,6 +55,16 @@
   display: flex;
   flex-direction: column;
   text-align: end;
+  position: absolute;
+  right: 5%;
+}
+
+.navbar_menu__wrapper li {
+  padding: 0.3rem;
+}
+
+.navbar_menu__wrapper li:hover {
+  background-color: rgba(255, 166, 0, 0.596);
 }
 
 .search_input {
