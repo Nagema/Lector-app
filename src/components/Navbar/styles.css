@@ -86,7 +86,7 @@
   margin: auto;
 }
 
-.input-elevated {
+.input_elevated {
   font-size: 16px;
   line-height: 1.5;
   border: none;
@@ -101,11 +101,11 @@
   padding: 0.5em 1em 0.5em 2.5em;
 }
 
-.input-elevated::placeholder {
+.input_elevated::placeholder {
   color: #838d99;
 }
 
-.input-elevated:focus {
+.input_elevated:focus {
   outline: none;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.16);
 }

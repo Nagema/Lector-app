@@ -96,7 +96,7 @@ export const NavbarComponent = () => {
       </nav>
       <div className="search_input">
         <input
-          className="input-elevated"
+          className="input_elevated"
           type="text"
           placeholder="Buscar"
           value={searchInput}
