@@ -47,8 +47,7 @@
   visibility: visible;
 }
 
-.categoty_options__dropdown li a:hover {
-  background-color: rgba(255, 166, 0);
-  z-index: 15;
-  font-weight: 600;
+.categoty_options__dropdown li a:hover,
+.link_active {
+  background-color: rgb(234 157 12);
 }

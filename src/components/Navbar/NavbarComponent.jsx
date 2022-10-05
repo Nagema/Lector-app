@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import "./styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faNewspaper } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import iconMenu from "../../assets/images/icon-menu.svg";
 import iconClose from "../../assets/images/icon-close-menu.svg";
@@ -16,6 +16,7 @@ export const NavbarComponent = () => {
   const navbarListStyle = isWide
     ? "navbar_menu__list__desktop"
     : "navbar_menu__list__mobile";
+  const { pathname } = useLocation();
   const [categoryToggle, setCategoryToggle] = useState(false);
   const [menuIcon, setMenuIconToggle] = useState(true);
 
@@ -31,14 +32,19 @@ export const NavbarComponent = () => {
     setCategoryToggle(false);
   };
 
+  const activeLinkClass = ({ isActive }) =>
+    "link" + (isActive ? " link_active" : "");
+
+  const isCategoryPage = pathname.startsWith("/news/");
+
   const { searchInput, setSearchInput } = useContext(Search);
   return (
     <div>
       <nav className="navbar_menu">
-        <Link to="/" className="logo_wrapper">
+        <NavLink to="/" className="logo_wrapper">
           <FontAwesomeIcon className="fa-xl" icon={faNewspaper} />
           <p>Infointelygenz</p>
-        </Link>
+        </NavLink>
         {menuIcon && !isWide ? (
           <button className="toggle_button" onClick={handleMenuIcon}>
             <img
@@ -60,18 +66,28 @@ export const NavbarComponent = () => {
             )}
             <ul className={navbarListStyle}>
               <li>
-                <Link to="/" onClick={handleBoxClose}>
+                <NavLink
+                  to="/"
+                  end
+                  className={activeLinkClass}
+                  onClick={handleBoxClose}
+                >
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to={"/favorites"} onClick={handleBoxClose}>
+                <NavLink
+                  to={"/favorites"}
+                  className={activeLinkClass}
+                  onClick={handleBoxClose}
+                >
                   Favoritos
-                </Link>
+                </NavLink>
               </li>
               <li onClick={handleFeatureLink}>
-                {" "}
-                Categorias
+                <span className={isCategoryPage ? "link_active" : ""}>
+                  Categorias
+                </span>
                 {categoryToggle && <CategoryBoxOptions />}
               </li>
             </ul>

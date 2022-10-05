@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./styles.css";
 import { News } from "../../context/NewsContext";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const CategoryBoxOptions = () => {
   const { news } = useContext(News);
@@ -13,7 +13,12 @@ export const CategoryBoxOptions = () => {
     <ul className="categoty_options__dropdown">
       {categories.map((category) => (
         <li key={category}>
-          <Link to={`/news/${category}`}>{category}</Link>
+          <NavLink
+            to={`/news/${category}`}
+            className={({ isActive }) => (isActive ? "link_active" : "")}
+          >
+            {category}
+          </NavLink>
         </li>
       ))}
     </ul>
