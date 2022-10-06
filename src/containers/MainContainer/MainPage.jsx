@@ -31,8 +31,8 @@ export const MainPage = () => {
       return getIsFav(item);
     });
 
-  const onCardClick = (article) => {
-    navigate(`/detail/${article.id}`);
+  const onCardClick = (route) => {
+    navigate(route);
   };
 
   return (
@@ -51,7 +51,7 @@ export const MainPage = () => {
                     key={index}
                     article={newItem}
                     onCardClick={onCardClick}
-                    isFav={getIsFav(article)}
+                    isFav={getIsFav(newItem)}
                     onFavClick={toggleFav}
                   />
                 ))
