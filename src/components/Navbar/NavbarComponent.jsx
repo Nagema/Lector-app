@@ -50,7 +50,7 @@ export const NavbarComponent = () => {
             <img
               className="toggle_button__menu"
               src={iconMenu}
-              alt="menu icon"
+              alt="open menu"
             />
           </button>
         ) : (
@@ -60,7 +60,7 @@ export const NavbarComponent = () => {
                 <img
                   className="toggle_button__close"
                   src={iconClose}
-                  alt="menu icon"
+                  alt="close menu"
                 />
               </button>
             )}

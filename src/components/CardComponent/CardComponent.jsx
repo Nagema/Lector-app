@@ -15,6 +15,7 @@ export const CardComponent = ({ article, onCardClick, isFav, onFavClick }) => {
         </div>
         <button
           type="button"
+          data-testid="card-favorite-button"
           className={"card_favorite_icon " + favClassName}
           onClick={() => onFavClick(article)}
         >
