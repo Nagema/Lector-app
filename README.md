@@ -29,3 +29,11 @@ Builds the app for production to the `build` folder.
 ### `npm run server`
 
 Run the Nodejs server and serve statics in the `build` folder.
+
+### `npm run test:unit`
+
+Run unit test.
+
+### `npm run test:e2e`
+
+Run the e2e test, in order to execute this command line it should be running first in another terminal `npm run build && npm run server`.
