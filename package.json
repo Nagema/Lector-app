@@ -23,14 +23,16 @@
   },
   "devDependencies": {
     "@testing-library/react": "^13.4.0",
-    "concurrently": "^7.4.0"
+    "concurrently": "^7.4.0",
+    "cypress": "^10.9.0"
   },
   "scripts": {
     "start": "concurrently --kill-others \"npm run server\" \"npm run react-start\"",
     "server": "node server.js",
     "react-start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test:unit": "react-scripts test",
+    "cypress:open": "cypress open",
     "eject": "react-scripts eject"
   },
   "proxy": "http://localhost:3001",
