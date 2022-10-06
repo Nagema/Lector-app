@@ -16,14 +16,14 @@ export const MainPage = () => {
 
   const fileteredNews = news
     .filter((item) => {
-      // filter by category
-      if (!category) return true;
-      return item.category === category;
-    })
-    .filter((item) => {
       // filter by search term
       if (!searchInput) return true;
       return item.title.toLowerCase().includes(searchInput.toLowerCase());
+    })
+    .filter((item) => {
+      // filter by category
+      if (!category) return true;
+      return item.category === category;
     })
     .filter((item) => {
       // filter by favorite
