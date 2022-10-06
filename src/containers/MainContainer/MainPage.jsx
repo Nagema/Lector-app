@@ -2,13 +2,14 @@ import React, { useContext } from "react";
 import "./styles.css";
 import { CardComponent } from "../../components/CardComponent/CardComponent";
 import { News } from "../../context/NewsContext";
-import { useParams, useLocation } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { Search } from "../../context/SearchContext";
 
 export const MainPage = () => {
+  const navigate = useNavigate();
   const { category } = useParams();
   const { pathname } = useLocation();
-  const { news, isItFav, favIds, loading } = useContext(News);
+  const { news, getIsFav, toggleFav, favIds, loading } = useContext(News);
   const { searchInput } = useContext(Search);
 
   const isFavoritePage = pathname === "/favorites";
@@ -27,8 +28,12 @@ export const MainPage = () => {
     .filter((item) => {
       // filter by favorite
       if (!isFavoritePage) return true;
-      return isItFav(item);
+      return getIsFav(item);
     });
+
+  const onCardClick = (article) => {
+    navigate(`/detail/${article.id}`);
+  };
 
   return (
     <div>
@@ -42,7 +47,13 @@ export const MainPage = () => {
             <ul className="main_news_list">
               {fileteredNews.length ? (
                 fileteredNews.map((newItem, index) => (
-                  <CardComponent key={index} newItem={newItem} />
+                  <CardComponent
+                    key={index}
+                    article={newItem}
+                    onCardClick={onCardClick}
+                    isFav={getIsFav(article)}
+                    onFavClick={toggleFav}
+                  />
                 ))
               ) : (
                 <li className="no_results">

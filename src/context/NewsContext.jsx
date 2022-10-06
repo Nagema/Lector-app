@@ -7,12 +7,12 @@ const NewsProvider = ({ children }) => {
   const { news, loading } = useFetch();
   const [favIds, setFavIds] = useState([]);
 
-  const isItFav = (item) => {
+  const getIsFav = (item) => {
     return favIds.includes(item.id);
   };
 
   const toggleFav = (item) => {
-    if (isItFav(item)) {
+    if (getIsFav(item)) {
       const newFavIds = favIds.filter((favId) => favId !== item.id); // remove fav
       setFavIds(newFavIds);
     } else {
@@ -26,7 +26,7 @@ const NewsProvider = ({ children }) => {
         news,
         loading,
         toggleFav,
-        isItFav,
+        getIsFav,
         favIds,
       }}
     >

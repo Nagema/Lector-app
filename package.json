@@ -8,7 +8,6 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
     "buffer": "^6.0.3",
@@ -22,6 +21,7 @@
     "xml2js": "^0.4.23"
   },
   "devDependencies": {
+    "@testing-library/react": "^13.4.0",
     "concurrently": "^7.4.0"
   },
   "scripts": {
